@@ -7,7 +7,7 @@ An ATM that anyone can build at home which receives cash and returns a cold wall
   
 
 <p align="center">
-    <img width="350"  src=""  alt="OSCA">
+    <img width="350"  src="https://github.com/anthonybudd/Open-Source-Crypto-ATM/blob/master/misc/osca.jpg?raw=true"  alt="OSCA">
 </p>
 
   
@@ -33,7 +33,7 @@ Detailed step-by-step instructions and a video tutorial are coming soon. However
 OSCA is very simple to use. Simply insert the amount of cash you would like converted to Bitcoin then press the blue flashing button. A paper wallet will be printed that is loaded with the desired amount of Bitcoin. Scan the status QR code to see your transaction on blockchain. Scan the withdraw QR code on the right to sweep the paper wallet.
 
 <p align="center">
-    <img  width="400"  src=""  alt="Demo">
+    <img  width="400"  src="https://github.com/anthonybudd/Open-Source-Crypto-ATM/blob/master/misc/demo.gif?raw=true"  alt="Demo">
 </p>
   
 
