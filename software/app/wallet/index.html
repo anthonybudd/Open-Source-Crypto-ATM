@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+    <style>
+        @font-face {
+            font-family: "ticketing";
+            src: url("ticketing.ttf") format("truetype");
+        }
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            background: #FFF;
+            color: #000;
+            height: 475px;
+            width: 740px;
+            overflow: hidden;
+            font-family: "ticketing";
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+        }
+        .col {
+            width: 33.3333%;
+            height: 100%;
+            display: block;
+            float:left;
+            position: relative;
+        }
+        .qr {
+            width: 150px;
+            height: 175px;
+            position: absolute;
+            top: 260px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: #FFF;
+        }
+        .qr > div {
+            background: #000;
+            color: #FFF;
+            text-align: center;
+        }
+        .qr > img {
+            width: 100%;
+        }
+        .col.private {
+            background-image: url("background.jpeg");
+            background-repeat: repeat;
+            background-size: 300px 300px;
+        }
+        .body {
+            height: 100%;
+            display: block;
+            float: left;
+        }
+        .body .content {
+            padding: 0px 20px 10px;
+        }
+        .currency {
+            font-size: 90px;
+            text-align: center;
+            background-color: #000;
+            color: #FFF;
+            line-height: 1;
+        }
+        .tx {
+            margin: 0;
+            text-transform: none;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .info {
+            background: #FFF;
+            padding: 0 0 15px;
+            top: 0;
+            height: 50%;
+            width: 100%;
+            display: block;
+            font-size: 20px;
+            overflow-wrap: break-word;
+        }
+        .info .label {
+            background: #000;
+            color: #FFF;
+            text-align: center;
+            font-size: 15px;
+        }
+        .info .body {
+            padding: 0 5px;
+            font-size: 25px;
+            overflow-wrap: break-word;
+            width: 100%;
+        }
+
+        #details {
+            margin-top: 10px;
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            word-wrap: break-word;
+        }
+        #details tr td:nth-child(1) {
+            vertical-align: text-top;
+            width: 70px;
+            white-space: nowrap;
+        }
+        #details tr td:nth-child(2) {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <div class="info">
+                <div class="label">ADDRESS</div>
+                <span class="body">[ADDRESS]</span>
+            </div>
+
+            <div class="qr">
+                <div>RECEIVE</div>
+                <img src="public.png" alt="Public Key">
+            </div>
+        </div>
+        <div class="col body">
+            <div class="content">
+                <div class="currency">BTC</div>
+                <table id="details">
+                    <tr>
+                        <td>AMOUNT</td>
+                        <td>[BTC]</td>
+                    </tr>
+                    <tr>
+                        <td>CURRENCY</td>
+                        <td>[CURRENCY]</td>
+                    </tr>
+                    <tr>
+                        <td>TIME</td>
+                        <td>[TIME]</td>
+                    </tr>
+                    <tr>
+                        <td>DATE</td>
+                        <td>[DATE]</td>
+                    </tr>
+                </table>
+                <p class="tx">TX:[TX]</p>
+                <div class="qr">
+                    <div>STATUS</div>
+                    <img src="status.png" alt="STATUS QR">
+                </div>
+            </div>
+        </div>
+        <div class="col private">
+            <div class="info">
+                <div class="label">PRIVATE KEY</div>
+                <span class="body">[PRIVATE_KEY]</span>
+            </div>
+
+            <div class="qr">
+                <div>WITHDRAW</div>
+                <img src="private.png" alt="Private Key">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
