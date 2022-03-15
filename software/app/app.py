@@ -40,7 +40,7 @@ load_dotenv()
 log('Starting...')
 time.sleep(10)
 log('Started')
-permiumRate = float(os.environ.get('PREMIUM', '0.02'))
+premiumRate = float(os.environ.get('PREMIUM', '0.02'))
 credit = 0
 credit_ = 0
 shouldPrint = False
@@ -107,15 +107,15 @@ def serialLoop():
     
     if (credit > 0):
         app.setFont(size=70)
-        app.setLabel('permium', 'Premium: ' + str(permiumRate*100) + '%')
+        app.setLabel('premium', 'Premium: ' + str(premiumRate*100) + '%')
         app.setLabel('usd', '$'+str(credit))
-        credit_ = credit - (credit * permiumRate)
+        credit_ = credit - (credit * premiumRate)
         btc_ = btc*credit_
         app.setLabel('btc', f'≈ ₿{btc_:.8f}')
         
     if (input == 'PRINT'):
         app.hideWidgetType(WIDGET_NAMES.Label, 'usd')
-        app.hideWidgetType(WIDGET_NAMES.Label, 'permium')
+        app.hideWidgetType(WIDGET_NAMES.Label, 'premium')
         app.setLabel('btc', f'Printing...')
         shouldPrint = True
         # printWallet()
@@ -185,8 +185,8 @@ def printWallet():
     updateBTCBuyPriceRequest = requests.get(f'https://blockchain.info/ticker')
     ticker = json.loads(updateBTCBuyPriceRequest.text)
     btcBuyPrice = ticker['USD']['buy']
-    app.setLabel('permium', '1 BTC = $' + str(btcBuyPrice))
-    app.showWidgetType(WIDGET_NAMES.Label, 'permium')
+    app.setLabel('premium', '1 BTC = $' + str(btcBuyPrice))
+    app.showWidgetType(WIDGET_NAMES.Label, 'premium')
     
     # Update Balance
     mainWallet.scan(scan_gap_limit=5)
@@ -196,7 +196,7 @@ def printWallet():
 
 def creditSubtractPremium():
     global credit
-    credit_ = credit - (credit * permiumRate)
+    credit_ = credit - (credit * premiumRate)
     return credit_
 
 app.setFont(size=50)
@@ -207,5 +207,5 @@ app.setStretch('both')
 app.setSticky('news')
 app.addLabel('usd', 'Open-Source Bitcoin ATM')
 app.addLabel('btc', 'Insert Cash To Begin')
-app.addLabel('permium', '1 BTC = $' + str(btcBuyPrice))
+app.addLabel('premium', '1 BTC = $' + str(btcBuyPrice))
 app.go()
