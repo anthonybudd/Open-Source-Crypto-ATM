@@ -1,6 +1,6 @@
 # OSCA - Open-Source Crypto ATM
 
-An ATM that anyone can build at home which receives cash and returns a cold wallet loaded with the desired amount of crypto-currency.
+The Open-Source Crypto ATM, a Bitcoin ATM that someone with minimal electro-mechanical skill can build at home with parts from Amazon and hardware from Lowes. OSCA does not require you to disclose any personal information to use this ATM. The user inserts cash and the machine returns a cold wallet loaded with the desired amount of crypto-currency.
 
   
 *This project is still in beta and is in active development.*
@@ -68,7 +68,7 @@ Paper wallets are controversial because they are considered outdated and unsecur
 
 #### Why use concrete not metal?
 
-Consider the Venn diagram of the parameters of this project. A) It must be easy to build B) Require minimal skill to build C) Must be cheap and extremely robust. While metal has obvious advantages (not to mention aesthetic), it requires skill to work with and expensive tools. Concrete is very cheap, it’s is easy to work with and is exceptionally strong. Therefore concrete is the obvious choice.
+Consider the Venn diagram of the parameters of this project. A) It must be easy to build B) Require minimal skill to build C) Must be cheap and extremely robust. While metal has obvious advantages (not least of which aesthetic), it requires skill to work with and expensive tools. Concrete is very cheap, it’s easy to work with and is exceptionally strong. Therefore concrete is the obvious choice.
 
   
 
