@@ -1,9 +1,6 @@
+# App
 
-# locla dev 
-docker build -t pdf .
-docker run pdf
-docker run -v $(pwd):/output openlabs/docker-wkhtmltopdf -q --page-height 150 --page-width 100 /output/wallet.html /output/wallet.pdf
-
+*Below are just notes I will clean this up and make a bash script later*
 
 
 sudo apt-get install wkhtmltopdf
@@ -32,14 +29,14 @@ sudo nano /lib/systemd/system/atm.service
 /etc/lightdm/lightdm.conf
 xserver-command = X -nocursor
 
-### Disable screensave
+### Disable screensaver
 
 Open up /etc/lightdm/lightdm.conf using your favorite text editor (I prefer nano).
 xserver-command=X -s 0 dpms
 
 ### Set background
 
-## Roate Display
+### Roate Display
 
 
 
