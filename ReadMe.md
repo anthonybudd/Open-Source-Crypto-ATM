@@ -39,7 +39,7 @@ OSCA is very simple to use. Simply insert the amount of cash you would like conv
 
 ### Motivation
 
-Bitcoin and crypto in general have the power to revolutionise finance. However anonymously converting fiat currency into crypto is becoming harder and harder. All of the major crypto exchanges require disclosure of personal identifiable information. Even the Bitcoin ATMs at your local gas station require a cell phone number and an email address. Crypto-currencies are so much of a threat to the legacy banking system that the UK has banned Bitcoin ATMs outright. This concerns me because I believe if we remain on this course open-source technology like blockchain will become heavily regulated and corporatised.
+Bitcoin and crypto in general have the power to revolutionise finance. However anonymously converting fiat currency into crypto is becoming harder and harder. All of the major crypto exchanges require disclosure of personal identifiable information. Even the Bitcoin ATMs at your local gas station require a cell phone number and an email address. Crypto-currencies are so much of a threat to the legacy banking system that the UK has banned Bitcoin ATMs outright. This concerns me because I believe if we remain on this course open-source technology like blockchain will become heavily regulated and corporatized.
 
   
 
