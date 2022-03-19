@@ -3,6 +3,8 @@ from bitcoinlib.mnemonic import Mnemonic
 from bitcoinlib.wallets import Wallet
 from bitcoinlib.keys import HDKey
 from bitcoinlib.keys import Key
+from bitcoinlib.values import Value
+from bitcoinlib.services.services import Service
 from dotenv import load_dotenv
 from appJar import gui
 from appJar.appjar import WIDGET_NAMES
@@ -69,7 +71,7 @@ while not (btc and btcBuyPrice):
         log(f'$1 USD = ₿ {btc}')
         log(f'₿ 1 = $USD {str(btcBuyPrice)}')
     except:
-        print("An exception occurred while getting BTC Prices")
+        log("An exception occurred while getting BTC Prices")
         time.sleep(5)
 
 # Init ATM wallet
@@ -158,6 +160,7 @@ def createTX():
     global outputKeyAddress
     global outputBTC
     global credit
+    global mainKey
     log(f'createTX()')
 
     # Calculate outputBTC
@@ -170,11 +173,26 @@ def createTX():
     log(f'creditSubtractPremium as BTC: {outputBTC}')
 
     # Make Transaction
-    tx = mainWallet.send_to(outputKeyAddress, str(outputBTC)+' BTC')
+    v = Value(f'{outputBTC} BTC')
+    log(f'outputBTC (sats): {v.value_sat}')
+    tx = mainWallet.transaction_create([(outputKeyAddress, v.value_sat)])   
+    tx.sign(mainKey)
     tx.info()
-    export = tx.export()
-    if (export[0]):
-        outputTXString = export[0][1]
+    log(f'RAW TX: {tx.raw_hex()}')
+    srv = Service(network='bitcoin', min_providers=1, max_providers=10, max_errors=10)
+    txResponse = srv.sendrawtransaction(tx.raw_hex())
+    print(txResponse)
+
+    if not (txResponse):
+        # Try using .send_to()
+        tx = mainWallet.send_to(outputKeyAddress, str(outputBTC)+' BTC')
+        tx.info()
+        export = tx.export()
+        if (export[0]):
+            outputTXString = export[0][1]
+    else:
+        if (txResponse['txid']):
+            outputTXString = txResponse['txid']
     
     app.setLabel('line2', f'Printing Recipt...')
     shouldPrint = True
