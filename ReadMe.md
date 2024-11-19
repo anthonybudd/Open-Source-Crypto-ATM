@@ -1,9 +1,6 @@
 # OSCA - Open-Source Crypto ATM
 
 The Open-Source Crypto ATM, a Bitcoin ATM that someone with minimal electro-mechanical skill can build at home with parts from Amazon and hardware from Lowes. OSCA does not require you to disclose any personal information to use this ATM. The user inserts cash and the machine returns a cold wallet loaded with the desired amount of crypto-currency.
-
-  
-*This project is still in beta and is in active development.*
   
 
 <p align="center">
